@@ -1,0 +1,53 @@
+<div class="w-[90%] mx-auto py-3 space-y-6">
+  <div class="flex justify-between">
+    <div class="flex gap-6">
+      <a [href]="rootWebUrl" class="cursor-pointer">
+        <img [src]="rootWebLogoUrl | concatImageLink" alt="dao-music-logo" />
+      </a>
+      <div class="h-14 w-px bg-black"></div>
+      <a
+        class="flex justify-center items-center h-16 w-auto"
+        *ngFor="let url of partnerLogoUrls"
+        [href]="rootWebUrl"
+      >
+        <img [src]="url | concatImageLink" [alt]="url" />
+      </a>
+    </div>
+    <div class="flex justify-center items-center">
+      <button
+        class="uppercase bg-black text-white text-xl px-16 py-3 rounded-xl font-bold hover:bg-white hover:text-black duration-150 border-2 border-black hover:border-orange-500"
+      >
+        SIGN IN TO DAO
+      </button>
+    </div>
+  </div>
+  <div>
+    <ul class="flex gap-8">
+      <li *ngFor="let socialMedia of socialMediaLogo">
+        <a href="{{ socialMedia.url }}">
+          <img
+            class="w-6 h-6 m-auto"
+            src="{{ imgDistPath + '/' + socialMedia.imgSrc }}"
+            alt="{{ socialMedia.imgSrc }}"
+          />
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="flex justify-between">
+    <div>
+      <div *ngFor="let branchAddress of branchAddresses" class="text-gray-700">
+        <span class="font-bold">{{ branchAddress.name }}: </span>
+        <pre>{{ branchAddress.address | newLine : 100 }}</pre>
+      </div>
+    </div>
+    <div>
+      <p
+        *ngFor="let companyInfoItem of companyInfo"
+        class="text-gray-700 text-right"
+      >
+        {{ companyInfoItem }}
+      </p>
+    </div>
+  </div>
+</div>
