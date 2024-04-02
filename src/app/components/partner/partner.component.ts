@@ -1,23 +1,25 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { ConcatImageLinkPipe } from '../../pipes/concat-image-link.pipe';
 
 @Component({
   selector: 'app-partner',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, ConcatImageLinkPipe],
   templateUrl: './partner.component.html',
   styleUrl: './partner.component.css',
 })
 export class PartnerComponent {
   partnerLogos = [
-    './dist/images/Google-Partner.webp',
-    './dist/images/POPS.webp',
-    './dist/images/Meta.webp',
-    './dist/images/DatViet-VAC.webp',
-    './dist/images/Def-Jam-Recordings.webp',
-    './dist/images/Sony-Music.webp',
-    './dist/images/SpaceSpeakers-Group.webp',
-    './dist/images/Viettel.webp',
-    './dist/images/Warner-Music-Group.webp',
-    './dist/images/Universal-Music-Group.webp',
+    'Google-Partner.webp',
+    'POPS.webp',
+    'Meta.webp',
+    'DatViet-VAC.webp',
+    'Def-Jam-Recordings.webp',
+    'Sony-Music.webp',
+    'SpaceSpeakers-Group.webp',
+    'Viettel.webp',
+    'Warner-Music-Group.webp',
+    'Universal-Music-Group.webp',
   ];
 }

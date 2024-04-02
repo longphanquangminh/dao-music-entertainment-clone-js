@@ -1,4 +1,4 @@
-<div class="w-[90%] mx-auto py-3 space-y-6">
+<div class="container-fluid py-3 space-y-6">
   <div class="flex justify-between">
     <div class="flex gap-6">
       <a [href]="rootWebUrl" class="cursor-pointer">
@@ -36,15 +36,16 @@
   </div>
   <div class="flex justify-between">
     <div>
-      <div *ngFor="let branchAddress of branchAddresses" class="text-gray-700">
+      <div *ngFor="let branchAddress of branchAddresses" class="text-gray-500">
         <span class="font-bold">{{ branchAddress.name }}: </span>
-        <pre>{{ branchAddress.address | newLine : 100 }}</pre>
+        <!-- <pre>{{ branchAddress.address | newLine : 100 }}</pre> -->
+        <span>{{ branchAddress.address }}</span>
       </div>
     </div>
     <div>
       <p
         *ngFor="let companyInfoItem of companyInfo"
-        class="text-gray-700 text-right"
+        class="text-gray-500 text-right"
       >
         {{ companyInfoItem }}
       </p>
